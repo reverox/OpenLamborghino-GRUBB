@@ -63,7 +63,7 @@ void setup() {
 #endif
 
   // Configura los pines como entradas o salidas
-  pinMode(PIN_BOTON, INPUT);
+  pinMode(PIN_BOTON, INPUT_PULLUP);
   pinMode(PIN_BUZZER, OUTPUT);
   pinMode(PIN_LED, OUTPUT);
   pinMode(PIN_Sensor_ON, OUTPUT);
@@ -141,7 +141,7 @@ void loop() {
 #endif
 
     if (digitalRead(PIN_BOTON))  // Si se presiona el botón, el robot se detiene.
-      state = false;
+      state = true;
 
     // Enciende el LED si el robot está online y no detecta ningún pad.
     digitalWrite(PIN_LED, !HL && !HR);
